@@ -21,8 +21,9 @@ public class Store {
     this.name="parameter";
     this.earnings=0;
     // Initialize itemList as a new ArrayList
-    
+    ArrayList<Item> itemList = new ArrayList();
     // add 'this' store to storeList
+    storeList.add(this);
   }
 
   public String getName(){
@@ -35,6 +36,12 @@ public class Store {
     // check if index is within the size of the itemList (if not, print statement that there are only x items in the store)
     // get Item at index from itemList and add its cost to earnings
     // print statement indicating the sale
+    if (index>=0 || index < itemList.size()){
+        Item i = ;
+        System.out.printf()
+    }else{
+        System.out.printf("There are only %s items in the store", itemList.size());
+    }
   }
   public void sellItem(String name){
     // check if Item with given name is in the itemList (you will need to loop over itemList) (if not, print statement that the store doesn't sell it)
