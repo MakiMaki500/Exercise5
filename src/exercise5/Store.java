@@ -37,8 +37,9 @@ public class Store {
     // get Item at index from itemList and add its cost to earnings
     // print statement indicating the sale
     if (index>=0 || index < itemList.size()){
-        Item i = ;
-        System.out.printf()
+        Item i= Item.getItem(index);
+        earnings += i.getCost();
+        System.out.printf("Item %s has been sold for %s.", i.getName(), i.getCost());
     }else{
         System.out.printf("There are only %s items in the store", itemList.size());
     }
@@ -47,6 +48,15 @@ public class Store {
     // check if Item with given name is in the itemList (you will need to loop over itemList) (if not, print statement that the store doesn't sell it)
     // get Item from itemList and add its cost to earnings
     // print statement indicating the sale
+    boolean found = false;
+    for(Item p : itemList) {
+        if(p.getName().equals(name)){
+            found = true;
+            earnings += p.getCost();
+            System.out.printf("Item %s has been sold for %s.", p.getName(), p.getCost());
+        }
+    }
+    if(!found) System.out.printf("No Item in the store named %s.\n", name);
   }
   public void sellItem(Item i){
     // check if Item i exists in the store (there is a method that can help with this) (if not, print statement that the store doesn't sell it)
