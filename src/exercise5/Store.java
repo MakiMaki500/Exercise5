@@ -90,9 +90,21 @@ public class Store {
   }
   public void filterCheap(double maxCost){
     // loop over itemList and print all items with a cost lower than or equal to the specified value
+    System.out.println("This is the list of all items of this cost.");
+    for(Item i : itemList){
+        if(i.getCost()<=maxCost){
+            System.out.printf("-%s",i.getName());
+        }
+    }
   }
   public void filterExpensive(double minCost){
     // loop over itemList and print all items with a cost higher than or equal to the specified value
+    System.out.println("This is the list of all items of this cost.");
+    for(Item i : itemList){
+        if(i.getCost()>=minCost){
+            System.out.printf("-%s",i.getName());
+        }
+    }
   }
   public static void printStats(){
     // loop over storeList and print the name and the earnings'Store.java'
