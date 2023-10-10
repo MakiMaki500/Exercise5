@@ -79,11 +79,14 @@ public class Store {
   public void filterType(String type){
     // loop over itemList and print all items with the specified type
     System.out.println("This is the list of all items of this type.");
-    for(int i,(i>=0)&&(i<itemList.size()),i++){
-        if(Item p.getType.equals()){
-            System.out.printf("-%s",Item.getName());
+    boolean found = false;
+    for(Item i : itemList){
+        if(i.getType().equals(type)){
+            found = true;
+            System.out.printf("-%s",i.getName());
         }
     }
+    if(!found) System.out.println("No Item in the store with this type.");
   }
   public void filterCheap(double maxCost){
     // loop over itemList and print all items with a cost lower than or equal to the specified value
