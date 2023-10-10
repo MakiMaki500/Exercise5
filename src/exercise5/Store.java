@@ -62,6 +62,15 @@ public class Store {
     // check if Item i exists in the store (there is a method that can help with this) (if not, print statement that the store doesn't sell it)
     // get Item i from itemList and add its cost to earnings
     // print statement indicating the sale
+    boolean found = false;
+    for(Item p : itemList) {
+        if(itemList.contains(p)){
+            found = true;
+            earnings += p.getCost();
+            System.out.printf("Item %s has been sold for %s.", p.getName(), p.getCost());
+        }
+    }
+    if(!found) System.out.printf("No Item in the store named %s.\n", name);
   }
   public void addItem(Item i){
     // add Item i to store's itemList
