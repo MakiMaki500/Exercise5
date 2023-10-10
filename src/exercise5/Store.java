@@ -74,9 +74,16 @@ public class Store {
   }
   public void addItem(Item i){
     // add Item i to store's itemList
+    itemList.add(i);
   }
   public void filterType(String type){
     // loop over itemList and print all items with the specified type
+    System.out.println("This is the list of all items of this type.");
+    for(int i,(i>=0)&&(i<itemList.size()),i++){
+        if(Item p.getType.equals()){
+            System.out.printf("-%s",Item.getName());
+        }
+    }
   }
   public void filterCheap(double maxCost){
     // loop over itemList and print all items with a cost lower than or equal to the specified value
