@@ -18,10 +18,10 @@ public class Store {
 
   public Store(String name){
     // Initialize name to parameter and earnings to zero
-    this.name="parameter";
+    this.name=name;
     this.earnings=0;
     // Initialize itemList as a new ArrayList
-    ArrayList<Item> itemList = new ArrayList();
+    this.itemList = new ArrayList();
     // add 'this' store to storeList
     storeList.add(this);
   }
@@ -36,12 +36,12 @@ public class Store {
     // check if index is within the size of the itemList (if not, print statement that there are only x items in the store)
     // get Item at index from itemList and add its cost to earnings
     // print statement indicating the sale
-    if (index>=0 || index < itemList.size()){
+    if (index>=0 && index < itemList.size()){
         Item i= Item.getItem(index);
         earnings += i.getCost();
-        System.out.printf("Item %s has been sold for %s.", i.getName(), i.getCost());
+        System.out.printf("Item %s has been sold for %s.\n", i.getName(), i.getCost());
     }else{
-        System.out.printf("There are only %s items in the store", itemList.size());
+        System.out.printf("There are only %s items in the store\n", itemList.size());
     }
   }
   public void sellItem(String name){
@@ -53,7 +53,7 @@ public class Store {
         if(p.getName().equals(name)){
             found = true;
             earnings += p.getCost();
-            System.out.printf("Item %s has been sold for %s.", p.getName(), p.getCost());
+            System.out.printf("Item %s has been sold for %s.\n", p.getName(), p.getCost());
         }
     }
     if(!found) System.out.printf("No Item in the store named %s.\n", name);
@@ -67,7 +67,7 @@ public class Store {
         if(itemList.contains(p)){
             found = true;
             earnings += p.getCost();
-            System.out.printf("Item %s has been sold for %s.", p.getName(), p.getCost());
+            System.out.printf("Item %s has been sold for %s.\n", p.getName(), p.getCost());
         }
     }
     if(!found) System.out.printf("No Item in the store named %s.\n", name);
@@ -83,7 +83,7 @@ public class Store {
     for(Item i : itemList){
         if(i.getType().equals(type)){
             found = true;
-            System.out.printf("-%s",i.getName());
+            System.out.printf("-%s\n",i.getName());
         }
     }
     if(!found) System.out.println("No Item in the store with this type.");
@@ -93,7 +93,7 @@ public class Store {
     System.out.println("This is the list of all items of this cost.");
     for(Item i : itemList){
         if(i.getCost()<=maxCost){
-            System.out.printf("-%s",i.getName());
+            System.out.printf("-%s\n",i.getName());
         }
     }
   }
@@ -102,7 +102,7 @@ public class Store {
     System.out.println("This is the list of all items of this cost.");
     for(Item i : itemList){
         if(i.getCost()>=minCost){
-            System.out.printf("-%s",i.getName());
+            System.out.printf("-%s\n",i.getName());
         }
     }
   }
