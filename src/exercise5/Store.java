@@ -108,6 +108,9 @@ public class Store {
   }
   public static void printStats(){
     // loop over storeList and print the name and the earnings'Store.java'
+    for(Store i : storeList){
+        System.out.println(i.getName()+" earnings: "+i.getEarnings());
+    }
 
   }
 }
